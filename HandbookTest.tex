@@ -1,0 +1,381 @@
+\documentclass{MDXHandbook}
+\usepackage{todonotes}
+\hypersetup{
+    colorlinks,
+%    linkcolor={red!50!black},
+%    citecolor={blue!50!black},
+%    urlcolor={blue!80!black}
+    linkcolor={MDXCorporateRed},
+    citecolor={blue},
+    urlcolor={blue}
+}
+
+%%% NOTE: Please compile this file at least twice as the title page uses exact positioning that need two compilations
+
+%%%%%%%%%%% Please include details of the module
+\modulecode{ABC1234}
+\moduletitle{A module on something}
+\moduleleader{A.N.Other}
+\term{AY (2019)}
+\duration{24 weeks}
+\version{1}
+\dept{Design Engineering and Mathematics}
+%%%%%%%%%%% This is used by MDXHandbook.cls to format the title page
+
+\begin{document}
+\maketitle
+
+\section*{Online location of handbook}
+\todo[inline]{delete if module handbook is only available online}
+This handbook can also be accessed via MyLearning.
+
+\section*{Other formats available}
+This handbook is available in a large print format. If you would like a large print copy or have other requirements for the handbook, please contact the Disability Support Service (\href{mailto:disability@mdx.ac.uk}{disability@mdx.ac.uk}, +44 (0)20 8411 4945). 
+
+\section*{Disclaimer}
+The material in this handbook is as accurate as possible at the date of production. You will be notified of any minor changes. If there are any major changes to the module you will be consulted prior to the changes being confirmed. Please check the version number on the front page of this handbook to ensure that you are using the most accurate information.
+
+\section*{Other documents}
+Your module handbook should be read and used alongside your programme handbook and the information available to all students on My Learning, including the Academic Regulations. Your programme handbook can be found on the My Learning programme page.
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Module Introduction}
+%%% Please amend as needed
+\todo[inline]{Write a brief introduction to the course. Indicate any module specific requirements and indicate what is expected from students.}
+
+\section{The Module Team}
+%%% Please amend as needed
+\todo[inline]{Please provide details of key staff. 
+It may not be possible to include details of all staff for modules with large teaching teams and so please include details of key staff and indicate who to contact.
+If photos are available you may wish to include them. 
+Role – Module leader, lecturer, seminar/lab/workshop tutor, technical tutor, GAA etc
+Room number – remove this if in open plan offices or hourly paid academic
+You may wish to include office hours if information is available or include details of where to locate this information online.
+ Include subject librarian and GAAs/SLAs attached to the module if applicable
+
+For example:}
+%%% \moduleStaff{Staff name} is a macro that produces a table for the member of staff
+%%% Keys:
+%%%		role = eg Module Leader, GAA, tutor, lab coordinator etc
+%%% 		room = room number
+%%%		telephone, tel = telephone number (up to you which format)
+%%%		email = email address (n.b. @ is a perfectly fine in LaTeX (no need to use \@)
+%%% 		photo = the filename or path name of an image file including its extension (NB there is a bug which means that filenames can't have spaces) 
+\moduleStaff[role = Module Leader, room=TG50A, telephone = 020 84115555, email = \href{mailto:a.n.other@mdx.ac.uk}{a.n.other@mdx.ac.uk}, photo=NoPhoto.pdf]{A.N. Other}
+
+\moduleStaff[photo = NoPhoto.pdf, role = Tutor, tel = x5555]{D.Alighieri}
+
+\newpage
+\section{Staff Student Communication}
+%%% Please amend as needed
+\todo[inline]{In this section detail the ways staff will communicate with students and how students can communicate with staff.
+For example}
+
+Students may contact staff via e-mail, phone, by dropping in to staff office hours, and by making an appointment to see them outside office hours. 
+Staff will contact students by e-mail, phone, the My Learning module page and via lectures and seminars.
+
+The team may send urgent group and/or individual messages about the module to you by email, so it is important that you read your University email regularly.
+All staff have office hours, it is not necessary to book an appointment during these hours, you just need to drop-in. 
+
+In the first instance problems should be dealt with by talking to a member of the module team. You can give feedback on this module to the module leader, your Student Voice Leader, to your personal tutor, and through the end of module evaluation survey.
+
+\section{Module Overview}
+%%% Please amend as needed
+\todo[inline]{Please insert the Module Narrative here, as published on Misis. The DPA team can help with this if necessary}
+Include:
+\begin{itemize}
+\item \emph{Aims}
+\item \emph{Learning outcomes}
+\item \emph{Syllabus}
+\item \emph{Learning and teaching strategy}
+\item \emph{Assessment scheme}
+\end{itemize}
+
+\emph{Also provide detail of}
+\begin{itemize}
+\item \emph{Learning hours}
+\item \emph{Scheduled teaching  e.g. 30\%}
+\item \emph{Independent study e.g. 70\%}
+\item \emph{Placement (if applicable)}
+\end{itemize}
+
+\section*{Research Ethics}
+\todo[inline]{Please insert the relevant statement , if appropriate, (select from one of three statements)}
+\subsection*{Statement 1:}
+\begin{itemize}
+	\item This module will require you to undertake an ethical review process/application before you carry out any research involving human participants, human data, animals/animal products, precious artefacts, materials or data systems.
+	\item Data MUST not be collected without first obtaining ethics approval for your research. If you submit a project that includes data gathered from or about people without ethical approval this may be treated as academic misconduct and could lead to fail grade being awarded.
+	\item Research ethics approval seeks to ensure all work is designed and undertaken according to certain principles of ethical research. These include: 
+		\begin{enumerate}
+			\item Primary concern must be given to the safety, welfare and dignity of participants, researchers, colleagues, the environment and the wider community 
+			\item Consideration of risks should be undertaken before research commences with the aim of minimising risks to those involved – i.e. human participants or animal subjects, colleagues, the environment and the wider community, as well as actual or potential risks to those directly or indirectly affected by the research.
+			\item Informed consent should be freely given by participants, and by a trained person when collecting or analysing human tissue (details on accessing and completing online training for gaining informed consent for HTA purposes can be found below in Section 8).
+			\item Respect for the privacy, confidentiality and anonymity of participants 
+			\item Consideration of the rights of people who may be vulnerable (by virtue of perceived or actual differences in their social status, ethnic origin, gender, mental capacities, or other such characteristics) who may be less competent or able to refuse to give consent to participate
+			\item Researchers have a responsibility to the general public and to their profession; as such they should balance the anticipated benefits of their research against potential harm, misuse or abuse which must be avoided 
+			\item Researchers must demonstrate the highest standards of ethical conduct and research integrity. They must work within the limits of their skills, training and experience, and refrain from exploitation, dishonesty, plagiarism, infringement of intellectual property rights and the fabrication of research results. They should declare any actual or potential conflicts of interest, and where necessary take steps to resolve them. 
+			\item When using human tissues for research, Human Tissue Act and Human Tissue Authority (HTA) requirements must be met. Please contact the relevant designated person (DP) in your department or the HTA Designated Individual (DI) (Dr Lucy Ghali - \href{mailto:L.Ghali@mdx.ac.uk}{L.Ghali@mdx.ac.uk}). Further information is provided below in the section: ``Human Tissue Authority Information'', see ``Governance Structure'' document and SOPs etc.
+			\item Research should not involve any illegal activity, and researchers must comply with all relevant laws
+		\end{enumerate}
+	\item You can apply for research ethical approval using the Middlesex Online Research Ethics (MORE) system which has information and guidance to help you meet the highest standards of ethical research using this link: \url{MOREform.mdx.ac.uk}
+	\item Information and further guidance on how to complete a research ethics application form (e.g., video guides and templates) can be found on the MORE MyLearning site\textsuperscript{\ast}: \url{mdx.mrooms.net/enrol/index.php?id=12277} (Log in required)\\ 
+ \textsuperscript{\ast}Middlesex University Definition of Research document can be located on this site.
+\end{itemize}
+
+\subsection*{Statement 2:}
+\begin{itemize}
+	\item 	This module has a set of pre-approved of ethical protocol’s which you are required to follow as part of carrying out any research involving human participants, human data, animals/animal products, precious artefacts, materials or data systems.
+	\item If you submit a project that includes data gathered from or about people outside of the ethical protocols approved this may be treated as academic misconduct and could lead to fail grade being awarded. This means only collecting data types and using data gathering methods as outlined by your module tutor.
+	\item Research ethics approval seeks to ensure all work is designed and undertaken according to certain principles of ethical research. These include: 
+	\begin{enumerate}
+		\item Primary concern must be given to the safety, welfare and dignity of participants, researchers, colleagues, the environment and the wider community 
+		\item Consideration of risks should be undertaken before research commences with the aim of minimising risks to those involved – i.e. human participants or animal subjects, colleagues, the environment and the wider community, as well as actual or potential risks to those directly or indirectly affected by the research.
+		\item Informed consent should be freely given by participants, and by a trained person when collecting or analysing human tissue (details on accessing and completing online training for gaining informed consent for HTA purposes can be found below in Section 8).
+		\item Respect for the privacy, confidentiality and anonymity of participants 
+		\item Consideration of the rights of people who may be vulnerable (by virtue of perceived or actual differences in their social status, ethnic origin, gender, mental capacities, or other such characteristics) who may be less competent or able to refuse to give consent to participate
+		\item Researchers have a responsibility to the general public and to their profession; as such they should balance the anticipated benefits of their research against potential harm, misuse or abuse which must be avoided 
+		\item Researchers must demonstrate the highest standards of ethical conduct and research integrity. They must work within the limits of their skills, training and experience, and refrain from exploitation, dishonesty, plagiarism, infringement of intellectual property rights and the fabrication of research results. They should declare any actual or potential conflicts of interest, and where necessary take steps to resolve them. 
+		\item When using human tissues for research, Human Tissue Act and Human Tissue Authority (HTA) requirements must be met. Please contact the relevant designated person (DP) in your department or the HTA Designated Individual (DI) (Dr Lucy Ghali - \href{mailto:L.Ghali@mdx.ac.uk}{L.Ghali@mdx.ac.uk}). Further information is provided below in the section: ``Human Tissue Authority Information'', see ``Governance Structure'' document and SOPs etc.
+		\item Research should not involve any illegal activity, and researchers must comply with all relevant laws
+	\end{enumerate}
+	\item For more information about ethics go to the Middlesex Online Research Ethics (MORE) system which has information and guidance to help you meet the highest standards of ethical research using this link: \url{MOREform.mdx.ac.uk}
+	\item Information and further guidance on how to complete a research ethics application form (e.g., video guides and templates) can be found on the MORE MyLearning site\textsuperscript{\ast}: \url{mdx.mrooms.net/enrol/index.php?id=12277} (Log in required)\\
+\textsuperscript{\ast}Middlesex University Definition of Research document can be located on this site.
+\end{itemize}
+
+\subsection*{Statement 3:}
+	\begin{itemize}
+		\item The teaching, learning, assessment and research activities undertaken in this module have been considered and are not likely to require ethical approval. 
+		\item However, please seek advice if undertaking the module entails carrying out any research activities involving human participants, human data, animals/animal products, precious artefacts, materials or data systems. If you submit work that includes data gathered from or about people, this may be treated as academic misconduct and could lead to fail grade being awarded. 
+		\item Research ethics approval seeks to ensure all research is designed and undertaken according to certain principles of ethical research. These include: 
+		\begin{enumerate}
+			\item Primary concern must be given to the safety, welfare and dignity of participants, researchers, colleagues, the environment and the wider community 
+			\item Consideration of risks should be undertaken before research commences with the aim of minimising risks to those involved – i.e. human participants or animal subjects, colleagues, the environment and the wider community, as well as actual or potential risks to those directly or indirectly affected by the research.
+			\item Informed consent should be freely given by participants, and by a trained person when collecting or analysing human tissue (details on accessing and completing online training for gaining informed consent for HTA purposes can be found below in Section 8).
+			\item Respect for the privacy, confidentiality and anonymity of participants 
+			\item Consideration of the rights of people who may be vulnerable (by virtue of perceived or actual differences in their social status, ethnic origin, gender, mental capacities, or other such characteristics) who may be less competent or able to refuse to give consent to participate
+			\item Researchers have a responsibility to the general public and to their profession; as such they should balance the anticipated benefits of their research against potential harm, misuse or abuse which must be avoided 
+			\item Researchers must demonstrate the highest standards of ethical conduct and research integrity. They must work within the limits of their skills, training and experience, and refrain from exploitation, dishonesty, plagiarism, infringement of intellectual property rights and the fabrication of research results. They should declare any actual or potential conflicts of interest, and where necessary take steps to resolve them. 
+			\item When using human tissues for research, Human Tissue Act and Human Tissue Authority (HTA) requirements must be met. Please contact the relevant designated person (DP) in your department or the HTA Designated Individual (DI) (Dr Lucy Ghali - \href{mailto:L.Ghali@mdx.ac.uk}{L.Ghali@mdx.ac.uk}). Further information is provided below in the section: ``Human Tissue Authority Information'', see ``Governance Structure'' document and SOPs etc.
+			\item Research should not involve any illegal activity, and researchers must comply with all relevant laws.
+		\end{enumerate}
+	\item For more information about ethics go to the Middlesex Online Research Ethics (MORE) system which has information and guidance to help you meet the highest standards of ethical research using this link: \url{MOREform.mdx.ac.uk}
+	\item Information and further guidance on how to complete a research ethics application form (e.g., video guides and templates) can be found on the MORE MyLearning site\textsuperscript{\ast}: \url{mdx.mrooms.net/enrol/index.php?id=12277} (Log in required)\\ 
+\textsuperscript{\ast}Middlesex University Definition of Research document can be located on this site.
+\end{itemize}
+
+
+
+\section{Learning Resources}
+%%% Please amend as needed
+\todo[inline]{Please include details of the type of resources students will use and where to locate them. For example}
+
+This module has a variety of learning resources available for you to use to support your learning. These include module notes, worked examples, solutions to exercises, feedback, podcasts, and key reading materials. These can be accessed online via the module page. Please visit the module page regularly to make use of these.
+
+\todo[inline]{You may wish to insert hyperlinks to the online resources or any other relevant materials such as podcasts, e-books, videos.}
+
+\todo[inline]{When your reading list is available online please include a link here to your list at \url{readinglists.mdx.ac.uk} rather than listing materials here. For more information please contact your Liaison Librarian: \url{libguides.mdx.ac.uk/liaisonlibrarians}}
+
+
+
+
+\section{Making the most of this module}
+%%% Please amend as needed
+\todo[inline]{Please indicate here how students should engage with the module and any module specific requirements. For example}
+
+The module team are here to help and support you achieve your goals. One of the key elements to successfully completing this module is engaging with all of the learning opportunities we offer as well and working with your peers to support one another. 
+
+\section*{Participation and engagement}
+%%% Please amend as needed
+\todo[inline]{Detail what students are required to do to engage in the module specify any requirements. For example}
+
+This module is designed as a combination of contact sessions and independent study. This means you must attend all the allocated sessions and you must work on your own outside them. Students are expected to take an active part in all learning sessions;  lectures, lab sessions, practical classes, seminars and workshops. 
+
+Student attendance is monitored during  \todo[inline]{enter text, i.e.: seminars/lectures}, and any unexplained absences will be followed up via e-mail. If for any reason you are unable to attend a session you must inform the module leader.
+
+\todo[inline]{Add in any module or programme specific attendance requirements and include any Professional, Statutory or Regulatory Body attendance requirements.}
+
+To make the most of this module please complete the following every week
+\begin{itemize}
+\item Read through the notes making a note of any points you need to discuss with your tutor.
+\item Complete the set activities before the next session, making a note of any points you need to discuss with your tutor.
+\item Go to the module My Learning page, attempt the quizzes, make use of extra material, view the podcasts, and access the activity solutions. Make a note of anything you wish to discuss with your tutor.
+\item Complete further reading from the core text online.
+\end{itemize}
+The module team is committed to support you and your fellow students whilst you undertake this module. In order for you to get the most out of sessions you need to come prepared and ready to contribute. Please ensure that any work set by the team has been completed before workshops. After each class please review what has been covered and make a note of anything you would like clarification on. 
+
+It is important that you are respectful and supportive to your fellow students and tutors. Adopting this approach will create a positive atmosphere within sessions and is something you can use in your professional life. 
+
+To access some of the rooms and specialist space used for this module you will need your University ID card. Please remember that your University ID should be carried with you always.
+
+\section*{Lateness policy}
+%%% Please amend as needed
+\todo[inline]{If your module has a policy on lateness please state it here. For example}
+
+Please ensure you are on time to sessions as tutors will start sessions promptly.  Please note that if you are more than 10 minutes late you will not be permitted to join the session. 
+
+\todo[inline]{You may wish to refer them to University Late Policy. \\ \url{unihub.mdx.ac.uk/study/assessment/attendance}}
+
+
+\section*{Mobile phones}
+%%% Please amend as needed
+\todo[inline]{If your module has a policy on mobile phone use please state it here
+For example}
+
+During some classes the tutor will ask you to use your mobile phone or smart device to interact and engage with the session. The tutor will indicate how and when you should do this. Please have your phones on silent throughout the session and only use them during the activities.
+
+\todo[inline]{or}
+
+All mobile phones must be switched to silent during sessions unless directed by your tutor to do otherwise.  Calls and texts cannot be made or received during sessions unless agreed with the tutor prior to the session starting.  If you are observed using your mobile phone you can be asked to leave the session.  
+
+\section*{Academic misconduct}
+Academic misconduct is a breach of the values of academic integrity, and can occur when a student cheats in an assessment, or attempts to deliberately mislead an examiner that the work presented is their own when it is not. It includes, but is not limited to, plagiarism, commissioning or buying work from a third party or copying the work of others, breach of examination room rules.
+
+Students who attempt to gain unfair advantage over others through academic misconduct  will be penalised by sanctions, according to the severity of the offence, which can include exclusion from the University. Links to the relevant University regulations and additional support resources can be found here: 
+\begin{itemize}
+	\item Academic Integrity Awareness Course. Access to course. (You will have to log into to MyUniHub and then MyLearning to access the course)
+	\item Section F: Infringement of Assessment Regulations/Academic Misconduct:\\
+		\url{www.mdx.ac.uk/about-us/policies/university-regulations}
+	\item Referencing and Plagiarism: Suspected of plagiarism?:\\
+		\url{libguides.mdx.ac.uk/c.php?g=322119&p=2155601}
+	\item Referencing and avoiding plagiarism:\\
+		\href{unihub.mdx.ac.uk/your-study/learning-enhancement-team/online-resources/referencing-and-avoiding-plagiarism}{\url{unihub.mdx.ac.uk/your-study/learning-enhancement-team/online-resources/}\\ \url{referencing-and-avoiding-plagiarism}}
+	\item The MDXSU Advice Service offers free and independent support face-to-face in making an appeal, complaint or responding to any allegations of academic or non-academic misconduct. 
+		\url{www.mdxsu.com/advice}
+\end{itemize}
+
+\section*{Extenuating circumstances}
+There may be difficult circumstances in your life that affect your ability to meet an assessment deadline or affect your performance in an assessment. These are known as extenuating circumstances or `ECs'. Extenuating circumstances are exceptional, seriously adverse and outside of your control. Please see link for further information and guidelines: \\
+\url{unihub.mdx.ac.uk/your-study/assessment-and-regulations/extenuating-circumstances}
+
+
+\section{Module overview and learning schedule}
+%%% Please amend as needed
+\todo[inline]{Please include a module schedule with details of what topics are covered when and any information relevant to the session. Give guidance in what students need to complete regularly.
+This could be done week by week or by block of weeks. We recommend you indicate who will lead the sessions and give details of any work expected of the student before the session. Also highlight assessment and feedback points. 
+
+\emph{Please note that the student activity section should cover all learning activities including online activities and reading along with other work set.}
+
+\emph{You may also wish to link the assessment and feedback to the modules learning outcomes to demonstrate when they have been achieved.}
+
+
+\emph{This could be done in the form of a table, example below.}
+}
+\newpage
+\begin{landscape}
+\rowcolors{1}{MDXCorporateLightGrey!50}{white}
+\begin{tabularx}{\linewidth}{|>{\centering}p{.075\linewidth}|>{\centering}p{.06\linewidth}|p{.2\linewidth}|p{.2\linewidth}|>{\centering}p{.04\linewidth}|>{\raggedright}X|>{\raggedright\arraybackslash}p{.15\linewidth}|}
+\rowcolor{MDXCorporateRed}\hline %
+\centering\color{white}Week beginning &	\centering\color{white}Week(s) &	\centering\color{white}Lecture & \centering\color{white}Workshop &	\centering\color{white}Staff & \centering\color{white}Student Activity & \centering\arraybackslash\color{white}Assessment and feedback\\ \hline
+Sep 30th &	1	& Discrete probability: counting methods &	 Calculating probabilities. Discuss properties of distributions. Meet the SLAs & AM	& Review probability unit 1. Compete extension activities. Seek advice from tutors or SLAs.	 & Select presentation topic and notify module leader \\ 
+\hline
+Oct 7th & 2 & & & & & \\
+\end{tabularx}
+
+\todo[inline]{Rename lectures as appropriate. Give detailed descriptions of in-class activities for each day of the workshops.}
+
+\end{landscape}
+\pagebreak
+
+\section{Assessment}
+%%% Please amend as needed
+\textbf{Formative assessment}: Formative assessments do not directly contribute to the overall module mark but they do provide an important opportunity to receive feedback on your learning. They provide an opportunity to evaluate and reflect on your understanding of what you have learnt. They also help your tutors identify what further support and guidance can be given to improve your grade. 
+
+On this module you will have the following format assessment opportunities. \todo[inline]{Please state any formative activities and deadlines for feedback on these within the module.}
+
+\textbf{Summative assessment}: Summative assessment is the assessed work that determines the overall module grade. It is the way the University verifies that students have met the learning outcomes at the appropriate level. 
+
+There are \todo[inline]{Insert number} assessment components in this module \todo[inline]{List them.:
+
+\emph{Include a table of deadlines for the module and then provide details for each in turn. Examples of how this can be done have been provided in a separate document.} For example:
+}
+\textbf{Assessment 1}
+\todo[inline]{(insert title e.g. Programming assignment)}
+
+\todo[inline]{Provide the following details for each assessment }
+\begin{itemize}
+	\item \emph{nature of the assessment,}
+	\item \emph{assessment brief}
+	\item \emph{\% weighting, }
+	\item \emph{deadline} 
+	\item \emph{Type of feedback you will receive (written, oral, electronic, etc etc)}
+	\item \emph{feedback return date. }
+	\item \emph{marking criteria rubric. }
+	\item \emph{additional grading criteria for example:}
+	
+	\emph{In order to pass this module, you need to achieve an aggregated pass overall and must achieve a minimum of grade 18 or above in all assessment tasks. 
+	All threshold SOBs must be demonstrated to pass the module.}
+
+	\item \emph{Please include any PRSB requirements, e.g. compensation not permitted. }
+\end{itemize}
+\textbf{Assessment 2 }
+
+\textbf{Assessment 3}
+
+\section*{Feedback on your assignments}
+You will be provided with feedback on all assessment that is helpful and informative, consistent with aiding the learning and development process. 
+
+Feedback will normally be provided within 15 working days of the published assessment component submission date.
+
+\section*{Overall module grade}
+%%% Please amend as needed
+\todo[inline]{Indicate how the overall module grade will be calculated. For example }
+
+Each component of assessment will be marked directly onto the 20-point scale based on the assessment criteria. To produce the overall module grade a weighted average percentage will be calculated using the midpoint percentage in the scale below and then converted to a 20-point grade.
+
+\todo[inline]{Or} 
+
+Each component of assessment will be marked as a percentage. To produce the overall module grade a weighted average percentage will be calculated and then converted to a 20-point grade using the scale below.
+
+\todo[inline]{Add in any assessment hurdles needed for individual assessment components needed to pass overall so for example}
+
+In order to pass this module, you need to pass all assessment tasks with a minimum grade of 17/18/16 or equivalent.
+\todo[inline]{(Please include any PRSB requirements)}
+
+Before you submit your work for final grading, please ensure that you have accurately referenced the work.  It is your responsibility to check the spelling and grammar.  If you have submitted a formative or draft assessment, you will receive feedback but no grade. The comments should inform you about how well you have done or tell you about the areas for improvement. All assignments should be submitted online unless specified in assessment briefs.
+
+Reassessment for this module normally takes place in the following way:
+\todo[inline]{add detail on when reassessment is normally held, include any PSRB requirements that constrain reassessment; where the module is by continuous assessment or reassessment eg SOBs indicate that this provides the reassessment opportunity; where students have the opportunity to undertake reassessment in year indicate that this provides the reassessment opportunity.}
+
+Further information is available at \\ \url{https://unihub.mdx.ac.uk/study/assessment/regulations}
+
+
+\newpage
+\begin{landscape}
+		%% \TwentyPointGradeTable produces the correct table for your subject
+		%% Keys:
+		%%		subject		=	MSO or PDE (others can be coded in the .cls file if necessary)
+		%%		level			= 	UG or PG
+		%%		width		= table width (default is \textheight assuming it is rotated using the sideways environment
+		\TwentyPointGradeTable[subject = MSO, level = UG, width = .95\linewidth]
+
+\end{landscape}
+
+\pagebreak
+\section*{Assessment process}
+The following diagram provides an overview of the marking process for your module assessment. Details of the programme external examiner can be found in the programme handbook.
+
+ Further information on the role of  external examiners can be found at \\
+ \url{http://unihub.mdx.ac.uk/your-study/ensuring-quality/external-examiners}
+
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\arrownode}[3]{
+		\draw #1 ++ (2,0.75) node  [right, rectangle, draw, thick, minimum height = 1.5cm, text width = {.85\textwidth}] {$\cdot$ #2};
+		\filldraw [thick, draw = black, fill = MDXCorporateRed] #1 --++ (1,-1) --++ (1,1) --++ (0,1.5) --++ (-1,-1) --++ (-1,1) -- #1;
+		\draw #1 ++ (1,0.25) node [yshift = -4pt] {\textbf{\textcolor{white}{#3}}};
+}
+\foreach \i in {0,...,4} \coordinate (I\i) at (0,{-2 * \i});
+
+\arrownode{(I0)}{You submit your assignment}{1}
+\arrownode{(I1)}{The first marker grades the work and provides feedback; this could be completed anonymously depending on the assessment type.}{2}
+\arrownode{(I2)}{A moderator or second marker reviews a sample of the work to quality assure the grades and feedback, to ensure they are accurate.}{3}
+\arrownode{(I3)}{A sample of work is sent to the External Examiner to check that the grading and feedback is at the right level and in line with external subject benchmarks (this applies to levels 5, 6, and 7 only)}{4}
+\arrownode{(I4)}{Your final grades are submitted to the subject assessment board.}{5}
+\end{tikzpicture}
+\end{center}
+
+\end{document}
