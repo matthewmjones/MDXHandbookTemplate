@@ -158,11 +158,12 @@
 \define@key{tm}{tel}{\def\@telephone{#1}}
 \define@key{tm}{photo}{\def\@photo{\includegraphics[width = .2\textwidth]{#1}}}
 \define@key{tm}{room}{\def\@room{#1}}
+\define@key{tm}{zoom}{\def\@zoom{#1}}
 \define@key{tm}{email}{\def\@email{#1}}
-\setkeys{tm}{role=,telephone=,room=,email=}
+\setkeys{tm}{role=,telephone=,room=,email=,zoom=}
 
 \newcommand{\moduleStaff}[2][]{%
-\setkeys{tm}{role=,telephone=,room=,email=}
+\setkeys{tm}{role=,telephone=,room=,email=,zoom=}
 \def\@photo{NO PHOTO}
 \setkeys{tm}{#1}%
 \begin{center}
@@ -175,7 +176,8 @@
 									Role:						&		\@role			\\
 									\hline Room:			&		\@room		\\
 									\hline Email:			&		\@email			\\
-									\hline Telephone:	&		\@telephone			\\								
+									\hline Telephone:	&		\@telephone			\\
+									\hline Zoom Room: & \@zoom \\
 								\end{tabularx}%
 								\def\arraystretch{1}\\
 	\hline
