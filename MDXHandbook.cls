@@ -4,11 +4,11 @@
 %%%
 %%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{MDXHandbook}[2019/06/10]
+\ProvidesClass{MDXHandbook}[2021/08/04]
 
 \LoadClass[12pt,twoside]{article}
 
-\RequirePackage[a4paper, margin=2cm]{geometry}
+\RequirePackage[a4paper, margin=1in]{geometry}
 \RequirePackage{xkeyval}
 \RequirePackage{tabularx}
 \RequirePackage{rotating}
@@ -36,29 +36,32 @@
 	\RequirePackage{fontspec}
 	\setmainfont{Arial}
 
-	\newfontfamily{\@facultyfont}[SizeFeatures = {Size = 16}]{Arial}
+	\newfontfamily{\@facultyfont}[SizeFeatures = {Size = 26}]{Arial Bold}
+	\newfontfamily{\@deptfont}[SizeFeatures = {Size = 22}]{Arial}
 	\newfontfamily{\@mcfont}[SizeFeatures = {Size = 26}]{Arial}
 	\newfontfamily{\@mtfont}[SizeFeatures = {Size = 36}]{Arial Bold}
-	\newfontfamily{\@mlfont}[SizeFeatures = {Size = 20}]{Arial}
-	\newfontfamily{\@genfont}[SizeFeatures = {Size = 14}]{Arial}
+	\newfontfamily{\@mlfont}[SizeFeatures = {Size = 18}]{Arial}
+	\newfontfamily{\@genfont}[SizeFeatures = {Size = 18}]{Arial}
 	
 \else
 	\ifxetex
 	\RequirePackage{fontspec}
 	\setmainfont{Arial}
 	
-	\newfontfamily{\@facultyfont}[SizeFeatures = {Size = 16}]{Arial}
+	\newfontfamily{\@facultyfont}[SizeFeatures = {Size = 26}]{Arial Bold}
+	\newfontfamily{\@deptfont}[SizeFeatures = {Size = 22}]{Arial}
 	\newfontfamily{\@mcfont}[SizeFeatures = {Size = 26}]{Arial}
 	\newfontfamily{\@mtfont}[SizeFeatures = {Size = 36}]{Arial Bold}
-	\newfontfamily{\@mlfont}[SizeFeatures = {Size = 20}]{Arial}
-	\newfontfamily{\@genfont}[SizeFeatures = {Size = 14}]{Arial}
+	\newfontfamily{\@mlfont}[SizeFeatures = {Size = 18}]{Arial}
+	\newfontfamily{\@genfont}[SizeFeatures = {Size = 18}]{Arial}
 	
 	\else
 	\RequirePackage{moresize}
 	\RequirePackage{helvet}
 	\renewcommand{\familydefault}{\sfdefault}
 	
-	\newcommand{\@facultyfont}{\large}
+	\newcommand{\@facultyfont}{\bfseries\Large}
+	\newcommand{\@deptfont}{\large}	
 	\newcommand{\@mcfont}{\huge}
 	\newcommand{\@mtfont}{\bfseries \HUGE}
 	\newcommand{\@mlfont}{\Large}
@@ -97,22 +100,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\@modulecode{[MODULE CODE]}
-\newcommand{\modulecode}[1]{\def\@modulecode{#1}\hypersetup{pdfkeywords = {#1}}}
+\newcommand{\modulecode}[1]{\global\def\@modulecode{#1}\hypersetup{pdfkeywords = {#1}}}
 
 \def\@moduletitle{[Module Title]}
-\newcommand{\moduletitle}[1]{\def\@moduletitle{#1}\hypersetup{pdftitle = {#1}}}
+\newcommand{\moduletitle}[1]{\global\def\@moduletitle{#1}\hypersetup{pdftitle = {#1}}}
 
 \def\@moduleleader{[Name]}
-\newcommand{\moduleleader}[1]{\def\@moduleleader{#1}\hypersetup{pdfauthor = {#1}}}
+\newcommand{\moduleleader}[1]{\global\def\@moduleleader{#1}\hypersetup{pdfauthor = {#1}}}
 
-\def\@term{AY (2018)}
-\newcommand{\term}[1]{\def\@term{#1}}
+\def\@term{AY (2021)}
+\newcommand{\term}[1]{\global\def\@term{#1}}
 
 \def\@duration{24 weeks}
-\newcommand{\duration}[1]{\def\@duration{#1}}
+\newcommand{\duration}[1]{\global\def\@duration{#1}}
 
 \def\@version{1}
-\newcommand{\version}[1]{\def\@version{#1}}
+\newcommand{\version}[1]{\global\def\@version{#1}}
 
 \def\@dept{Design Engineering and Mathematics}
 \newcommand{\dept}[1]{\def\@dept{#1}}
@@ -124,15 +127,19 @@
 		
 	\begin{titlepage}
 		\begin{tikzpicture}[remember picture, overlay]
-			\draw (current page.north east) ++ (-1in,-1in) node [anchor = north east, text width = 2in, align = right] {\textcolor{MDXCorporateRed}{\@facultyfont Faculty of Science and Technology}};			
-			\draw (current page.north west) ++ (1in, -1in) node [anchor = north west] {\includegraphics[width = 4cm]{MU_LDN_Logo.pdf}};			
-			\draw (current page.north) ++ (0,-9cm) node {\textcolor{MDXCorporateDarkGrey}{\@mcfont\@modulecode}};			
-			\draw (current page.north) ++ (0,-11cm) node {\textcolor{MDXCorporateRed}{\parbox[][][c]{.9\textwidth}{\centering\@mtfont\@moduletitle}}};
-			\draw (current page.north) ++ (0, -16cm) node {\@mlfont Module Leader: \@moduleleader};			
-			\draw (current page.south west) ++ (1in,8cm) node [anchor = west] {\@genfont Term: \@term};			
-			\draw (current page.south west) ++ (1in, 7cm) node [anchor = west]  {\@genfont Duration of the module: \@duration};			
-			\draw (current page.south west) ++ (1in, 6cm) node  [anchor = west] {\@genfont Document version: \@version};			
-			\draw [MDXCorporateDarkGrey] (current page.south west) ++ (.1\paperwidth,4cm) --++ (.8\paperwidth,0) node [midway, anchor = north] {\textcolor{MDXCorporateDarkGrey}{\@facultyfont \@dept}};
+			\draw (current page.north east) ++ (-1in, -1in) node [anchor = north east] {\includegraphics[width = 2.63in]{MU_LDN_Logo.pdf}};	
+			
+			\draw (current page.center) ++ (0cm,4cm) node [text width = .8\pagewidth, align = center] {\textcolor{MDXCorporateRed}{\@facultyfont Science and Technology}};
+			\draw (current page.center) ++ (0cm,2cm) node [align = center] {\textcolor{MDXCorporateDarkGrey}{\@deptfont \@dept}};
+		
+			\draw (current page.center) ++ (0,-3.5cm) node {\textcolor{MDXCorporateDarkGrey}{\@mcfont\@modulecode}};			
+			\draw (current page.center) ++ (0,-2cm) node {\textcolor{MDXCorporateRed}{\parbox[][][c]{.9\textwidth}{\centering\@mtfont\@moduletitle}}};
+			
+			\draw (current page.south west) ++ (2cm, 5.6cm) node [anchor = west] {\@mlfont Module Leader: \@moduleleader};
+			\draw (current page.south west) ++ (2cm,4.4cm) node [anchor = west] {\@genfont Term: \@term};			
+			\draw (current page.south west) ++ (2cm, 3.2cm) node [anchor = west]  {\@genfont Duration of the module: \@duration};			
+			\draw (current page.south west) ++ (2cm, 2cm) node  [anchor = west] {\@genfont Document version: \@version};
+
 		\end{tikzpicture}
 	\end{titlepage}%
 }
@@ -143,7 +150,7 @@
 %%%%%%%%%%% Set headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{\@modulecode}
+\fancyhead[R]{\@moduletitle\quad\@modulecode\quad\includegraphics[height=0.75cm]{MU_LDN_Logo.pdf}}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -197,112 +204,124 @@
 \ifdefstring{\@subj}{MSO}{
 	\ifdefstring{\@level}{UG}{ %% UG MSO Table
 		\def\arraystretch{1.25}		
-		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}X|>{\centering}p{.2\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering\arraybackslash}p{.15\@tpgtablewidth}|}
-\hline \rowcolor{MDXCorporateLightGrey}	\textbf{Classification}		&		\textbf{Grade}		& 	\multicolumn{2}{c}{\textbf{Percentages}} & \textbf{Midpoint} \\
-\hline
-				First class							&  1 & 90 & 100 & 95.0 \\
-													   & 2 & 80 & 89 & 84.5 \\
-													   & 3 & 72 & 79 & 75.5 \\
-													   & 4 & 70 & 71 & 70.5 \\
-\hline		Upper second class		  & 5 & 68 & 69 & 68.5 \\
-													  & 6 & 65 & 67 & 66.0 \\
-													  & 7 & 62 & 64 & 63.0\\
-													  & 8 & 60 & 61 & 60.5 \\
-\hline		Lower second class		  & 9 & 58 & 59 & 58.5 \\
-													  & 10 & 55 & 57 & 56.0 \\
-													  & 11 & 52 & 54 & 53.0 \\
-													  & 12 & 50 & 51 & 50.5 \\
-\hline		Third								  & 13 & 48 & 49 & 48.5 \\
-												     & 14 & 45 & 47 & 46.0 \\
-												     & 15 & 42 & 44 & 43.0\\
-												     & 16 & 40 & 41 & 40.5\\
-\hline		Compensatable fail		 & 17 & 35 & 39 & 37.0 \\
-												     & 18 & 30 & 34 & 32.0\\
-\hline		Uncompensatable fail   & 19 & 0 & 29 & 14.5\\
-\hline
-		\end{tabularx}
+		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering\arraybackslash}X|}
+\hline \rowcolor{MDXCorporateLightGrey}	
+
+20-point scale & General scale & General scale (full ranges) & Percentage used for aggregation purposes only
+
+\textbf{(for areas marking directly to the 20 point scale on modules with multiple assessment components)} \\\hline
+1	& 80\% - 100\% & 79.50\% - 100\%   & 90\% \\\hline
+2	& 76\% - 79\%  & 75.50\% - 79.49\% & 77.5\% \\\hline
+3	& 73\% - 75\%  & 72.50\% - 75.49\% & 74\% \\\hline
+4	& 70\% - 72\%  & 69.50\% - 72.49\% & 71\% \\\hline
+5	& 67\% - 69\%  & 66.50\% - 69.49\% & 68\% \\\hline
+6   & 65\% - 66\%  & 64.50\% - 66.49\% & 65.5\% \\\hline
+7	& 62\% - 64\%  & 61.50\% - 64.49\% & 63\% \\\hline
+8	& 60\% - 61\%  & 59.50\% - 61.49\% & 60.5\% \\\hline
+9	& 57\% - 59\%  & 56.50\% - 59.49\% & 58\% \\\hline
+10	& 55\% - 56\%  & 54.50\% - 56.49\% & 55.5\% \\\hline
+11	& 52\% - 54\%  & 51.50\% - 54.49\% & 53\% \\\hline
+12	& 50\% - 51\%  & 49.50\% - 51.49\% & 50.5\% \\\hline
+13	& 47\% - 49\%  & 46.50\% - 49.49\% & 48\% \\\hline
+14	& 45\% - 46\%  & 44.50\% - 46.49\% & 45.5\% \\\hline
+15	& 42\% - 44\%  & 41.50\% - 44.49\% & 43\% \\\hline
+16	& 40\% - 41\%  & 39.50\% - 41.49\% & 40.5\% \\\hline
+17	& 35\% - 39\%  & 34.50\% - 39.49\% & 37\% \\\hline
+18	& 30\% - 34\%  & 29.50\% - 34.49\% & 32\% \\\hline
+19	& 0\% - 29\%   & 0.01\% - 29.49\% & 15\% \\\hline
+20	& Non-participation & 0\% & 0\% (non-submission of a component)\\\hline
+\end{tabularx}
 	}{ %% PG MSO Table
-		\def\arraystretch{1.25}		
-		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}X|>{\centering}p{.2\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering\arraybackslash}p{.15\@tpgtablewidth}|}
-\hline \rowcolor{MDXCorporateLightGrey}	\textbf{Classification}		&		\textbf{Grade}		& 	\multicolumn{2}{c}{\textbf{Percentages}} & \textbf{Midpoint} \\
-\hline
-				Distinction						&  1 & 90 & 100 & 95.0 \\
-													   & 2 & 80 & 89 & 84.5 \\
-													   & 3 & 72 & 79 & 75.5 \\
-													   & 4 & 70 & 71 & 70.5 \\
-\hline		Merit								  & 5 & 68 & 69 & 68.5 \\
-													  & 6 & 65 & 67 & 66.0 \\
-													  & 7 & 62 & 64 & 63.0\\
-													  & 8 & 60 & 61 & 60.5 \\
-\hline		Pass	      						  & 9 & 58 & 59 & 58.5 \\
-													  & 10 & 55 & 57 & 56.0 \\
-													  & 11 & 52 & 54 & 53.0 \\
-													  & 12 & 50 & 51 & 50.5 \\
-												     & 13 & 48 & 49 & 48.5 \\
-												     & 14 & 45 & 47 & 46.0 \\
-												     & 15 & 42 & 44 & 43.0\\
-												     & 16 & 40 & 41 & 40.5\\
-\hline		Compensatable fail		 & 17 & 35 & 39 & 37.0 \\
-												     & 18 & 30 & 34 & 32.0\\
-\hline		Uncompensatable fail   & 19 & 0 & 29 & 14.5\\
-\hline
-		\end{tabularx}
+	\def\arraystretch{1.25}		
+	\begin{tabularx}{\@tpgtablewidth}{|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering\arraybackslash}X|}
+\hline \rowcolor{MDXCorporateLightGrey}	
+
+20-point scale & General scale & General scale (full ranges) & Percentage used for aggregation purposes only
+
+\textbf{(for areas marking directly to the 20 point scale on modules with multiple assessment components)} \\\hline
+1	& 80\% - 100\% & 79.50\% - 100\%   & 90\% \\\hline
+2	& 76\% - 79\%  & 75.50\% - 79.49\% & 77.5\% \\\hline
+3	& 73\% - 75\%  & 72.50\% - 75.49\% & 74\% \\\hline
+4	& 70\% - 72\%  & 69.50\% - 72.49\% & 71\% \\\hline
+5	& 67\% - 69\%  & 66.50\% - 69.49\% & 68\% \\\hline
+6   & 65\% - 66\%  & 64.50\% - 66.49\% & 65.5\% \\\hline
+7	& 62\% - 64\%  & 61.50\% - 64.49\% & 63\% \\\hline
+8	& 60\% - 61\%  & 59.50\% - 61.49\% & 60.5\% \\\hline
+9	& 57\% - 59\%  & 56.50\% - 59.49\% & 58\% \\\hline
+10	& 55\% - 56\%  & 54.50\% - 56.49\% & 55.5\% \\\hline
+11	& 52\% - 54\%  & 51.50\% - 54.49\% & 53\% \\\hline
+12	& 50\% - 51\%  & 49.50\% - 51.49\% & 50.5\% \\\hline
+13	& 47\% - 49\%  & 46.50\% - 49.49\% & 48\% \\\hline
+14	& 45\% - 46\%  & 44.50\% - 46.49\% & 45.5\% \\\hline
+15	& 42\% - 44\%  & 41.50\% - 44.49\% & 43\% \\\hline
+16	& 40\% - 41\%  & 39.50\% - 41.49\% & 40.5\% \\\hline
+17	& 35\% - 39\%  & 34.50\% - 39.49\% & 37\% \\\hline
+18	& 30\% - 34\%  & 29.50\% - 34.49\% & 32\% \\\hline
+19	& 0\% - 29\%   & 0.01\% - 29.49\% & 15\% \\\hline
+20	& Non-participation & 0\% & 0\% (non-submission of a component)\\\hline
+\end{tabularx}
 	}
 }{}
 
 \ifdefstring{\@subj}{PDE}{
 	\ifdefstring{\@level}{UG}{%% PDE UG 
 	\def\arraystretch{1.25}		
-		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}X|>{\centering}p{.2\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering\arraybackslash}p{.15\@tpgtablewidth}|}
-\hline \rowcolor{MDXCorporateLightGrey}	\textbf{Classification}		&		\textbf{Grade}		& 	\multicolumn{2}{c}{\textbf{Percentages}} & \textbf{Midpoint} \\
-\hline
-				First class							&  1 & 80 & 100 & 90.0 \\
-													   & 2 & 76 & 79 & 77.5 \\
-													   & 3 & 72 & 75 & 73.5 \\
-													   & 4 & 70 & 71 & 70.5 \\
-\hline		Upper second class		  & 5 & 68 & 69 & 68.5 \\
-													  & 6 & 65 & 67 & 66.0 \\
-													  & 7 & 62 & 64 & 63.0\\
-													  & 8 & 60 & 61 & 60.5 \\
-\hline		Lower second class		  & 9 & 58 & 59 & 58.5 \\
-													  & 10 & 55 & 57 & 56.0 \\
-													  & 11 & 52 & 54 & 53.0 \\
-													  & 12 & 50 & 51 & 50.5 \\
-\hline		Third								  & 13 & 48 & 49 & 48.5 \\
-												     & 14 & 45 & 47 & 46.0 \\
-												     & 15 & 42 & 44 & 43.0\\
-												     & 16 & 40 & 41 & 40.5\\
-\hline		Compensatable fail		 & 17 & 35 & 39 & 37.0 \\
-												     & 18 & 30 & 34 & 32.0\\
-\hline		Uncompensatable fail   & 19 & 0 & 29 & 14.5\\
-\hline
-		\end{tabularx}	
+		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering\arraybackslash}X|}
+\hline \rowcolor{MDXCorporateLightGrey}	
+
+20-point scale & General scale & General scale (full ranges) & Percentage used for aggregation purposes only
+
+\textbf{(for areas marking directly to the 20 point scale on modules with multiple assessment components)} \\\hline
+1	& 80\% - 100\% & 79.50\% - 100\%   & 90\% \\\hline
+2	& 76\% - 79\%  & 75.50\% - 79.49\% & 77.5\% \\\hline
+3	& 73\% - 75\%  & 72.50\% - 75.49\% & 74\% \\\hline
+4	& 70\% - 72\%  & 69.50\% - 72.49\% & 71\% \\\hline
+5	& 67\% - 69\%  & 66.50\% - 69.49\% & 68\% \\\hline
+6   & 65\% - 66\%  & 64.50\% - 66.49\% & 65.5\% \\\hline
+7	& 62\% - 64\%  & 61.50\% - 64.49\% & 63\% \\\hline
+8	& 60\% - 61\%  & 59.50\% - 61.49\% & 60.5\% \\\hline
+9	& 57\% - 59\%  & 56.50\% - 59.49\% & 58\% \\\hline
+10	& 55\% - 56\%  & 54.50\% - 56.49\% & 55.5\% \\\hline
+11	& 52\% - 54\%  & 51.50\% - 54.49\% & 53\% \\\hline
+12	& 50\% - 51\%  & 49.50\% - 51.49\% & 50.5\% \\\hline
+13	& 47\% - 49\%  & 46.50\% - 49.49\% & 48\% \\\hline
+14	& 45\% - 46\%  & 44.50\% - 46.49\% & 45.5\% \\\hline
+15	& 42\% - 44\%  & 41.50\% - 44.49\% & 43\% \\\hline
+16	& 40\% - 41\%  & 39.50\% - 41.49\% & 40.5\% \\\hline
+17	& 35\% - 39\%  & 34.50\% - 39.49\% & 37\% \\\hline
+18	& 30\% - 34\%  & 29.50\% - 34.49\% & 32\% \\\hline
+19	& 0\% - 29\%   & 0.01\% - 29.49\% & 15\% \\\hline
+20	& Non-participation & 0\% & 0\% (non-submission of a component)\\\hline
+\end{tabularx}
 	}{ %% PDE PG
 	\def\arraystretch{1.25}		
-		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}X|>{\centering}p{.2\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.15\@tpgtablewidth}|>{\centering\arraybackslash}p{.15\@tpgtablewidth}|}
-\hline \rowcolor{MDXCorporateLightGrey}	\textbf{Classification}		&		\textbf{Grade}		& 	\multicolumn{2}{c}{\textbf{Percentages}} & \textbf{Midpoint} \\
-\hline
-				Distinction							&  1 & 80 & 100 & 90.0 \\
-													   & 2 & 76 & 79 & 77.5 \\
-													   & 3 & 72 & 75 & 73.5 \\
-													   & 4 & 70 & 71 & 70.5 \\
-\hline		Merit								  & 5 & 68 & 69 & 68.5 \\
-													  & 6 & 65 & 67 & 66.0 \\
-													  & 7 & 62 & 64 & 63.0\\
-													  & 8 & 60 & 61 & 60.5 \\
-\hline		Pass								  & 9 & 58 & 59 & 58.5 \\
-													  & 10 & 55 & 57 & 56.0 \\
-													  & 11 & 52 & 54 & 53.0 \\
-													  & 12 & 50 & 51 & 50.5 \\
-													  & 13 & 48 & 49 & 48.5 \\
-												     & 14 & 45 & 47 & 46.0 \\
-												     & 15 & 42 & 44 & 43.0\\
-												     & 16 & 40 & 41 & 40.5\\
-\hline		Compensatable fail		 & 17 & 35 & 39 & 37.0 \\
-												     & 18 & 30 & 34 & 32.0\\
-\hline		Uncompensatable fail   & 19 & 0 & 29 & 14.5\\
-\hline
-		\end{tabularx}	
+		\begin{tabularx}{\@tpgtablewidth}{|>{\centering}p{.15\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering}p{.25\@tpgtablewidth}|>{\centering\arraybackslash}X|}
+\hline \rowcolor{MDXCorporateLightGrey}	
+
+20-point scale & General scale & General scale (full ranges) & Percentage used for aggregation purposes only
+
+\textbf{(for areas marking directly to the 20 point scale on modules with multiple assessment components)} \\\hline
+1	& 80\% - 100\% & 79.50\% - 100\%   & 90\% \\\hline
+2	& 76\% - 79\%  & 75.50\% - 79.49\% & 77.5\% \\\hline
+3	& 73\% - 75\%  & 72.50\% - 75.49\% & 74\% \\\hline
+4	& 70\% - 72\%  & 69.50\% - 72.49\% & 71\% \\\hline
+5	& 67\% - 69\%  & 66.50\% - 69.49\% & 68\% \\\hline
+6   & 65\% - 66\%  & 64.50\% - 66.49\% & 65.5\% \\\hline
+7	& 62\% - 64\%  & 61.50\% - 64.49\% & 63\% \\\hline
+8	& 60\% - 61\%  & 59.50\% - 61.49\% & 60.5\% \\\hline
+9	& 57\% - 59\%  & 56.50\% - 59.49\% & 58\% \\\hline
+10	& 55\% - 56\%  & 54.50\% - 56.49\% & 55.5\% \\\hline
+11	& 52\% - 54\%  & 51.50\% - 54.49\% & 53\% \\\hline
+12	& 50\% - 51\%  & 49.50\% - 51.49\% & 50.5\% \\\hline
+13	& 47\% - 49\%  & 46.50\% - 49.49\% & 48\% \\\hline
+14	& 45\% - 46\%  & 44.50\% - 46.49\% & 45.5\% \\\hline
+15	& 42\% - 44\%  & 41.50\% - 44.49\% & 43\% \\\hline
+16	& 40\% - 41\%  & 39.50\% - 41.49\% & 40.5\% \\\hline
+17	& 35\% - 39\%  & 34.50\% - 39.49\% & 37\% \\\hline
+18	& 30\% - 34\%  & 29.50\% - 34.49\% & 32\% \\\hline
+19	& 0\% - 29\%   & 0.01\% - 29.49\% & 15\% \\\hline
+20	& Non-participation & 0\% & 0\% (non-submission of a component)\\\hline
+\end{tabularx}
 	}
 }{}
 }
